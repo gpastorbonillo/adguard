@@ -10,6 +10,7 @@ metadata:
 spec: 
   type: LoadBalancer
   loadBalancerIP: 10.100.15.101 
+  externalTrafficPolicy: Local 
   selector: 
     app: adguard 
   ports: 
