@@ -17,5 +17,20 @@ spec:
         app: adguard
     spec:
       containers:
-      - name: landing-webpage
+      - name: adguard
         image: adguard/adguardhome 
+        volumeMounts: 
+        - name: adguard-data 
+          mountPath: /opt/adguardhome/work 
+        - name: adguard-config 
+          mountPath: /opt/adguardhome/conf
+        env: 
+        - name: "TZ" 
+          value: "GMT+1" 
+      volumes: 
+      - name: adguard-data 
+        persistentVolumeClaim: 
+          claimName: adguard-data 
+      - name: adguard-config
+        persistentVolumeClaim:
+          claimName: adguard-config

@@ -12,6 +12,6 @@ spec:
   - name: web-service
     port: 80 
     targetPort: 80 
-  - name: install-web-service
-    port: 3000
-    targetPort: 3000
+    #- name: install-web-service
+    #port: 3000
+    #targetPort: 3000

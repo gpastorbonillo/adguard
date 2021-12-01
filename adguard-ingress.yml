@@ -22,10 +22,3 @@ spec:
             name: adguard-web-service 
             port: 
               number: 80
-      - path: /install 
-        pathType: Prefix 
-        backend: 
-          service: 
-            name: adguard-web-service 
-            port: 
-              number: 3000
