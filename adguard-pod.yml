@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: adguard
+  namespace: adguard
+  labels: 
+    app: adguard 
+spec:
+  containers:
+    - name: adguard
+      image: adguard/adguardhome

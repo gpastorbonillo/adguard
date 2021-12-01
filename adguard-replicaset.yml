@@ -1,0 +1,21 @@
+apiVersion: apps/v1 
+kind: ReplicaSet
+metadata: 
+  name: adguard-replicaset
+  namespace: adguard
+  labels: 
+    app: adguard 
+spec: 
+  replicas: 2 
+  selector: 
+    matchLabels: 
+      app: adguard 
+  template: 
+    metadata:
+      name: adguard
+      labels:
+        app: adguard
+    spec:
+      containers:
+      - name: landing-webpage
+        image: adguard/adguardhome 
