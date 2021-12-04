@@ -6,7 +6,7 @@ metadata:
   labels: 
     app: adguard 
 spec: 
-  storageClassName: "manual" 
+  volumeName: "adguard-data" 
   accessModes: 
   - ReadWriteMany 
   resources: 

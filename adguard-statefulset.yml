@@ -1,12 +1,13 @@
 apiVersion: apps/v1 
-kind: ReplicaSet
+kind: StatefulSet
 metadata: 
   name: adguard-replicaset
   namespace: adguard
   labels: 
     app: adguard 
 spec: 
-  replicas: 1 
+  replicas: 1
+  serviceName: "adguard"
   selector: 
     matchLabels: 
       app: adguard 
@@ -15,10 +16,10 @@ spec:
       name: adguard
       labels:
         app: adguard
-    spec: 
+    spec:
       securityContext:
-        runAsUser: 2000 
-        fsGroup: 2000 
+        runAsUser: 2000
+        fsGroup: 2000
       containers:
       - name: adguard
         image: adguard/adguardhome 
